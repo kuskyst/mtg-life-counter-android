@@ -1,11 +1,7 @@
 package jp.kuskyst.mtg_life_counter_android.ui
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Button
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.Alignment
 import jp.kuskyst.mtg_life_counter_android.Life
 import jp.kuskyst.mtg_life_counter_android.model.entity.LifeEntity
 import jp.kuskyst.mtg_life_counter_android.viewmodel.LifeViewModel
