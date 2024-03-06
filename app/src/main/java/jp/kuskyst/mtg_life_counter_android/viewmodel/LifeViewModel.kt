@@ -16,7 +16,7 @@ class LifeViewModel @Inject constructor(
     private val repository: LifeRepository
 ) :  ViewModel() {
 
-    var life = MutableLiveData<LifeEntity>()
+    val life = MutableLiveData<LifeEntity>()
 
     fun getLife() {
         this.viewModelScope.launch(Dispatchers.IO) {
@@ -27,6 +27,7 @@ class LifeViewModel @Inject constructor(
     fun saveLife(entity: LifeEntity) {
         this.viewModelScope.launch(Dispatchers.IO) {
             repository.saveLife(entity)
+            life.postValue(entity)
         }
     }
 

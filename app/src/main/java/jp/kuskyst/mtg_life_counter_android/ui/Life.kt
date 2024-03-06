@@ -27,14 +27,14 @@ fun Life(leftLife: Int, rightLife: Int) {
         ) {
             Text(
                 text = leftLife.toString(),
-                color = Purple200,
+                color = LeftCountColor,
                 textAlign = TextAlign.Center,
                 fontSize = 200.sp,
                 modifier = Modifier.weight(weight = 1f),
             )
             Text(
                 text = rightLife.toString(),
-                color = Purple700,
+                color = RightCountColor,
                 textAlign = TextAlign.Center,
                 fontSize = 200.sp,
                 modifier = Modifier.weight(weight = 1f),
