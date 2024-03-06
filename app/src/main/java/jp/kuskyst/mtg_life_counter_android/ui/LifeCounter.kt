@@ -10,13 +10,13 @@ import java.time.LocalDate
 
 @Composable
 fun LifeCounter(vm: LifeViewModel) {
+    val now = LocalDate.now().toString()
     var left = remember {
         mutableStateOf(vm.life.value?.left ?: 20)
     }
     var right = remember {
         mutableStateOf(vm.life.value?.right ?: 20)
     }
-    val now = LocalDate.now().toString()
     Life(leftLife = left.value, rightLife = right.value)
     Counter(
         {
