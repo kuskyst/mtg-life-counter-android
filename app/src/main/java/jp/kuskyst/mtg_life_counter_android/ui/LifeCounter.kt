@@ -40,4 +40,5 @@ fun LifeCounter(vm: LifeViewModel) {
     ResetButton {
         vm.saveLife(LifeEntity(date = now.value, left = 20, right = 20))
     }
+    Dice()
 }
