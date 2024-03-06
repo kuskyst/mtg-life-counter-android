@@ -1,5 +1,5 @@
 # mtg-life-counter-android
-MTGのLifeCounter
+Magic:TheGathering用のライフ計算機
 
 | # | |
 | ---- |--------------------------|
