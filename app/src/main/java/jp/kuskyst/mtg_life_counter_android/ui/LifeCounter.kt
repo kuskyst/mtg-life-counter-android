@@ -15,7 +15,9 @@ fun LifeCounter() {
     }
     Life(leftLife = left.value, rightLife = right.value)
     Counter(
-        { left.value += 1 }, { left.value -= 1 },
-        { right.value += 1 }, { right.value -= 1 }
+        { left.value += 1 },
+        { if(left.value > 0) left.value -= 1 else left.value = 0 },
+        { right.value += 1 },
+        { if (right.value > 0) right.value -= 1 else right.value = 0 }
     )
 }
