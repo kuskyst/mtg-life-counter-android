@@ -1,8 +1,11 @@
 package jp.kuskyst.mtg_life_counter_android.ui
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Button
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import jp.kuskyst.mtg_life_counter_android.Life
 import jp.kuskyst.mtg_life_counter_android.model.entity.LifeEntity
 import jp.kuskyst.mtg_life_counter_android.viewmodel.LifeViewModel
@@ -10,30 +13,35 @@ import java.time.LocalDate
 
 @Composable
 fun LifeCounter(vm: LifeViewModel) {
-    val now = LocalDate.now().toString()
-    var left = remember {
-        mutableStateOf(vm.life.value?.left ?: 20)
-    }
-    var right = remember {
-        mutableStateOf(vm.life.value?.right ?: 20)
-    }
-    Life(leftLife = left.value, rightLife = right.value)
+    val now = mutableStateOf(LocalDate.now().toString())
+    Life(leftLife = vm.life.value!!.left, rightLife = vm.life.value!!.right)
     Counter(
         {
-            left.value += 1
-            vm.saveLife(LifeEntity(date = now, left = left.value, right = right.value))
+            vm.saveLife(LifeEntity(
+                date = now.value,
+                left =  vm.life.value!!.left + 1,
+                right =  vm.life.value!!.right))
         },
         {
-            if (left.value > 0) left.value -= 1
-            vm.saveLife(LifeEntity(date = now, left = left.value, right = right.value))
+            vm.saveLife(LifeEntity(
+                date = now.value,
+                left =  vm.life.value!!.left - 1,
+                right =  vm.life.value!!.right))
         },
         {
-            right.value += 1
-            vm.saveLife(LifeEntity(date = now, left = left.value, right = right.value))
+            vm.saveLife(LifeEntity(
+                date = now.value,
+                left =  vm.life.value!!.left,
+                right =  vm.life.value!!.right + 1))
         },
         {
-            if (right.value > 0) right.value -= 1
-            vm.saveLife(LifeEntity(date = now, left = left.value, right = right.value))
+            vm.saveLife(LifeEntity(
+                date = now.value,
+                left =  vm.life.value!!.left,
+                right =  vm.life.value!!.right - 1))
         }
     )
+    ResetButton {
+        vm.saveLife(LifeEntity(date = now.value, left = 20, right = 20))
+    }
 }
