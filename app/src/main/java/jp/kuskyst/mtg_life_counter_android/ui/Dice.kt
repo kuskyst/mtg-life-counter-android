@@ -1,12 +1,9 @@
 package jp.kuskyst.mtg_life_counter_android.ui
 
-import android.view.animation.RotateAnimation
-import android.view.animation.ScaleAnimation
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
@@ -21,7 +18,7 @@ import jp.kuskyst.mtg_life_counter_android.R
 
 @Composable
 fun Dice() {
-    var visible by remember { mutableStateOf(false) }
+    val visible = remember { mutableStateOf(false) }
     val result = remember { mutableStateOf(1) }
     val res = when(result.value) {
         1 -> R.drawable.dice_1
@@ -37,9 +34,11 @@ fun Dice() {
         verticalArrangement = Arrangement.Center
     ) {
         AnimatedVisibility(
-            visible,
-            enter = scaleIn(animationSpec = tween(durationMillis = 500)),
+            visible.value,
+            enter = scaleIn(animationSpec = tween(durationMillis = 500))
+                    + fadeIn(animationSpec = tween(durationMillis = 300)),
             exit = scaleOut(animationSpec = tween(durationMillis = 500))
+                    + fadeOut(animationSpec = tween(durationMillis = 300)),
         ) {
             Image(
                 painter = painterResource(id = res),
@@ -54,8 +53,8 @@ fun Dice() {
     ) {
         Button(
             onClick = {
-                result.value = (1..6).random()
-                visible = !visible
+                if (!visible.value) result.value = (1..6).random()
+                visible.value = !visible.value
             },
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.Black.copy(alpha = 0.6F)),

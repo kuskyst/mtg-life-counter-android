@@ -1,5 +1,6 @@
 package jp.kuskyst.mtg_life_counter_android.ui
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
@@ -14,7 +15,8 @@ import androidx.compose.ui.graphics.Color
 fun ResetButton(listener: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Top
     ) {
         Button(
             onClick = listener,
