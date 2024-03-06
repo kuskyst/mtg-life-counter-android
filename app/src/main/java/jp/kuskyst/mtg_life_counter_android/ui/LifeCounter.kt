@@ -6,6 +6,7 @@ import androidx.compose.runtime.remember
 import jp.kuskyst.mtg_life_counter_android.Life
 import jp.kuskyst.mtg_life_counter_android.model.entity.LifeEntity
 import jp.kuskyst.mtg_life_counter_android.viewmodel.LifeViewModel
+import java.time.LocalDate
 
 @Composable
 fun LifeCounter(vm: LifeViewModel) {
@@ -15,23 +16,24 @@ fun LifeCounter(vm: LifeViewModel) {
     var right = remember {
         mutableStateOf(vm.life.value?.right ?: 20)
     }
+    val now = LocalDate.now().toString()
     Life(leftLife = left.value, rightLife = right.value)
     Counter(
         {
             left.value += 1
-            vm.saveLife(LifeEntity(date = "1", left = left.value, right = right.value))
+            vm.saveLife(LifeEntity(date = now, left = left.value, right = right.value))
         },
         {
-            if(left.value > 0) left.value -= 1
-            vm.saveLife(LifeEntity(date = "1", left = left.value, right = right.value))
+            if (left.value > 0) left.value -= 1
+            vm.saveLife(LifeEntity(date = now, left = left.value, right = right.value))
         },
         {
             right.value += 1
-            vm.saveLife(LifeEntity(date = "1", left = left.value, right = right.value))
+            vm.saveLife(LifeEntity(date = now, left = left.value, right = right.value))
         },
         {
             if (right.value > 0) right.value -= 1
-            vm.saveLife(LifeEntity(date = "1", left = left.value, right = right.value))
+            vm.saveLife(LifeEntity(date = now, left = left.value, right = right.value))
         }
     )
 }

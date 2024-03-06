@@ -6,13 +6,12 @@ import javax.inject.Inject
 
 class LifeRepository @Inject constructor(private val lifeDao: LifeDao) {
 
-    fun getLife(): LifeEntity {
-        val res = lifeDao.getLife()
-        return if (res.isEmpty()) LifeEntity("1", 20, 20) else res[0]
+    fun getLife(date: String): LifeEntity {
+        return this.lifeDao.getLife(date) ?: LifeEntity(date, 20, 20)
     }
 
     fun saveLife(entity: LifeEntity) {
-        lifeDao.saveLife(entity)
+        this.lifeDao.saveLife(entity)
     }
 
 }

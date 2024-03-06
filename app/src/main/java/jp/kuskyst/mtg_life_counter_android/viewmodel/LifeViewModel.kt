@@ -8,6 +8,7 @@ import jp.kuskyst.mtg_life_counter_android.model.entity.LifeEntity
 import jp.kuskyst.mtg_life_counter_android.model.repository.LifeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,7 +20,7 @@ class LifeViewModel @Inject constructor(
 
     fun getLife() {
         this.viewModelScope.launch(Dispatchers.IO) {
-            life.postValue(repository.getLife())
+            life.postValue(repository.getLife(LocalDate.now().toString()))
         }
     }
 
