@@ -9,36 +9,36 @@ import java.time.LocalDate
 
 @Composable
 fun LifeCounter(vm: LifeViewModel) {
-    val now = mutableStateOf(LocalDate.now().toString())
+    val now = LocalDate.now().toString()
     Life(leftLife = vm.life.value!!.left, rightLife = vm.life.value!!.right)
     Counter(
         {
             vm.saveLife(LifeEntity(
-                date = now.value,
+                date = now,
                 left =  vm.life.value!!.left + 1,
                 right =  vm.life.value!!.right))
         },
         {
             vm.saveLife(LifeEntity(
-                date = now.value,
+                date = now,
                 left =  if (vm.life.value!!.left > 0) vm.life.value!!.left - 1 else vm.life.value!!.left,
                 right =  vm.life.value!!.right))
         },
         {
             vm.saveLife(LifeEntity(
-                date = now.value,
+                date = now,
                 left =  vm.life.value!!.left,
                 right =  vm.life.value!!.right + 1))
         },
         {
             vm.saveLife(LifeEntity(
-                date = now.value,
+                date = now,
                 left =  vm.life.value!!.left,
                 right =  if (vm.life.value!!.right > 0) vm.life.value!!.right - 1 else vm.life.value!!.right))
         }
     )
     ResetButton {
-        vm.saveLife(LifeEntity(date = now.value, left = 20, right = 20))
+        vm.saveLife(LifeEntity(date = now, left = 20, right = 20))
     }
     Dice()
 }
