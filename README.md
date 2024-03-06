@@ -10,5 +10,10 @@ Magic:TheGathering用のライフ計算機
 | LocalDB | Room |
 | Test | Android JUnit 4 |
 
+# Demo
+![device-2024-03-06-235026](https://github.com/kuskyst/mtg-life-counter-android/assets/126965999/4a6a873e-7dab-4981-82ff-ccafd47d8bc8)
+
+
 # Image
-![Screenshot_20240306_193712](https://github.com/kuskyst/mtg-life-counter-android/assets/126965999/2add5e17-63e1-4d4a-8bc8-ef2794d78da2)
+![Screenshot_20240306_234749](https://github.com/kuskyst/mtg-life-counter-android/assets/126965999/2d566e4d-8d53-47c7-b5da-56cd11a0bafb)
+![Screenshot_20240306_234831](https://github.com/kuskyst/mtg-life-counter-android/assets/126965999/6ff705df-abca-4161-95b2-73c6f7207beb)
