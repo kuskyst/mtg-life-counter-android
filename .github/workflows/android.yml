@@ -15,7 +15,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 17
+          java-version: 21
       - name: Make gradlew Executable
         run: chmod +x ./gradlew
       - name: Run Android Lint
