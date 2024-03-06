@@ -11,8 +11,7 @@ Magic:TheGathering用のライフ計算機
 | Test | Android JUnit 4 |
 
 # Demo
-![device-2024-03-06-235026](https://github.com/kuskyst/mtg-life-counter-android/assets/126965999/4a6a873e-7dab-4981-82ff-ccafd47d8bc8)
-
+![device-2024-03-07-000405](https://github.com/kuskyst/mtg-life-counter-android/assets/126965999/e5800f89-0587-4bd0-b47c-ae65e8c7c41a)
 
 # Image
 ![Screenshot_20240306_234749](https://github.com/kuskyst/mtg-life-counter-android/assets/126965999/2d566e4d-8d53-47c7-b5da-56cd11a0bafb)
