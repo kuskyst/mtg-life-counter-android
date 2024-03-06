@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import jp.kuskyst.mtg_life_counter_android.model.dao.LifeDao
 import jp.kuskyst.mtg_life_counter_android.model.entity.LifeEntity
 
-@Database(entities = [LifeEntity::class], version = 1)
+@Database(entities = [LifeEntity::class], version = 1, exportSchema = false)
 abstract class LifeDatabase : RoomDatabase() {
 
     abstract fun lifeDao(): LifeDao

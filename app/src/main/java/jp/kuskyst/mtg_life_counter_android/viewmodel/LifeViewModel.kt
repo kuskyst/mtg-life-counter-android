@@ -1,9 +1,12 @@
 package jp.kuskyst.mtg_life_counter_android.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.room.Room
-import jp.kuskyst.mtg_life_counter_android.model.db.LifeDatabase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class LifeViewModel : ViewModel() {
+@HiltViewModel
+class LifeViewModel @Inject constructor(
+
+) :  ViewModel() {
 
 }

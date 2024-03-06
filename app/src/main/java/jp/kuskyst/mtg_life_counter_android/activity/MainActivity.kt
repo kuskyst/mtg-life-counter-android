@@ -3,9 +3,10 @@ package jp.kuskyst.mtg_life_counter_android.activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import dagger.hilt.android.AndroidEntryPoint
 import jp.kuskyst.mtg_life_counter_android.ui.LifeCounter
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

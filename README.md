@@ -3,7 +3,7 @@ Magic:TheGathering用のライフ計算機
 
 | # | |
 | ---- |--------------------------|
-| Language| Android Kotlin 1.7 |
+| Language| Android Kotlin 1.9 |
 | Architecture | MVVM |
 | DI | Hilt |
 | UI | Jetpack Compose |
