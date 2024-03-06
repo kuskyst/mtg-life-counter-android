@@ -21,7 +21,7 @@ fun LifeCounter(vm: LifeViewModel) {
         {
             vm.saveLife(LifeEntity(
                 date = now.value,
-                left =  vm.life.value!!.left - 1,
+                left =  if (vm.life.value!!.left > 0) vm.life.value!!.left - 1 else vm.life.value!!.left,
                 right =  vm.life.value!!.right))
         },
         {
@@ -34,7 +34,7 @@ fun LifeCounter(vm: LifeViewModel) {
             vm.saveLife(LifeEntity(
                 date = now.value,
                 left =  vm.life.value!!.left,
-                right =  vm.life.value!!.right - 1))
+                right =  if (vm.life.value!!.right > 0) vm.life.value!!.right - 1 else vm.life.value!!.right))
         }
     )
     ResetButton {
