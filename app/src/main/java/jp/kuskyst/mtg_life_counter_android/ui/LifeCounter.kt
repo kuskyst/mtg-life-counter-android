@@ -1,7 +1,6 @@
 package jp.kuskyst.mtg_life_counter_android.ui
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
 import jp.kuskyst.mtg_life_counter_android.Life
 import jp.kuskyst.mtg_life_counter_android.model.entity.LifeEntity
 import jp.kuskyst.mtg_life_counter_android.viewmodel.LifeViewModel
