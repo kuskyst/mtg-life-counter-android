@@ -9,7 +9,7 @@ import jp.kuskyst.mtg_life_counter_android.ui.LifeCounter
 import jp.kuskyst.mtg_life_counter_android.viewmodel.LifeViewModel
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class LifeCounterActivity : ComponentActivity() {
 
     private val viewModel: LifeViewModel by viewModels()
 
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         this.viewModel.getLife()
         this.viewModel.life.observe(this) {
             setContent {
-                LifeCounter(viewModel)
+                LifeCounter(this.viewModel)
             }
         }
     }
