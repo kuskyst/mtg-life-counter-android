@@ -10,9 +10,9 @@ import jp.kuskyst.mtg_life_counter_android.model.entity.LifeEntity
 interface LifeDao {
 
     @Query("SELECT * from life")
-    fun get(): List<LifeEntity>
+    fun getLife(): List<LifeEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun save(lifeEntity: LifeEntity)
+    fun saveLife(lifeEntity: LifeEntity)
 
 }
