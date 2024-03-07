@@ -2,12 +2,14 @@ package jp.kuskyst.mtg_life_counter_android
 
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import jp.kuskyst.mtg_life_counter_android.activity.LifeCounterActivity
 import org.junit.Before
 
 import org.junit.Test
 import org.junit.Rule
 
+@HiltAndroidTest
 class LifeCounterViewTest {
 
     @get:Rule
@@ -15,7 +17,9 @@ class LifeCounterViewTest {
 
     @Before
     fun setUp() {
-        this.composeTestRule.onNodeWithContentDescription("reset").performClick()
+        this.composeTestRule
+            .onNodeWithContentDescription("reset")
+            .performClick()
     }
 
     @Test
@@ -61,6 +65,24 @@ class LifeCounterViewTest {
             .onNodeWithContentDescription("dice start")
             .performClick()
         this.composeTestRule.onNode(!hasContentDescription("dice result"))
+    }
+
+    @Test
+    fun reset() {
+        repeat((1..20).random()) {
+            this.composeTestRule
+                .onNodeWithContentDescription(
+                    if ((1..2).random() % 2 == 0) "left up" else "left down")
+                .performClick()
+            this.composeTestRule
+                .onNodeWithContentDescription(
+                    if ((1..2).random() % 2 == 0) "right up" else "right down")
+                .performClick()
+        }
+        this.composeTestRule
+            .onNodeWithContentDescription("reset")
+            .performClick()
+        this.composeTestRule.onAllNodesWithText("20").assertCountEquals(2)
     }
 
 }
