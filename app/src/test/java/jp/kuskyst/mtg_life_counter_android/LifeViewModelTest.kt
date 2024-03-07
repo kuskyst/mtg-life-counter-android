@@ -6,7 +6,6 @@ import jp.kuskyst.mtg_life_counter_android.model.db.LifeDatabase
 import jp.kuskyst.mtg_life_counter_android.model.entity.LifeEntity
 import jp.kuskyst.mtg_life_counter_android.model.repository.LifeRepository
 import jp.kuskyst.mtg_life_counter_android.viewmodel.LifeViewModel
-import org.junit.After
 import org.junit.Test
 
 import org.junit.Assert.*
