@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 
 @Composable
 fun ResetButton(listener: () -> Unit) {
@@ -22,6 +24,7 @@ fun ResetButton(listener: () -> Unit) {
             onClick = listener,
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.Black.copy(alpha = 0.6F)),
+            modifier = Modifier.semantics { contentDescription = "reset" }
         ) {
             Text(
                 text = "Reset",

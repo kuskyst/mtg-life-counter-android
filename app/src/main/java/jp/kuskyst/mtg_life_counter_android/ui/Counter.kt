@@ -8,9 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 
-@Preview
 @Composable
 fun Counter(vararg listener: () -> Unit) {
     Row(
@@ -31,6 +31,7 @@ fun Counter(vararg listener: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
+                    .semantics { contentDescription = "left up" }
             ) {}
             Button(
                 onClick = listener[1],
@@ -38,6 +39,7 @@ fun Counter(vararg listener: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
+                    .semantics { contentDescription = "left down" }
             ) {}
         }
         Column(
@@ -51,6 +53,7 @@ fun Counter(vararg listener: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
+                    .semantics { contentDescription = "right up" }
             ) {}
             Button(
                 onClick = listener[3],
@@ -58,6 +61,7 @@ fun Counter(vararg listener: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
+                    .semantics { contentDescription = "right down" }
             ) {}
         }
     }

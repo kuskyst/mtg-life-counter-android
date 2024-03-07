@@ -14,6 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import jp.kuskyst.mtg_life_counter_android.R
 
 @Composable
@@ -42,7 +44,7 @@ fun Dice() {
         ) {
             Image(
                 painter = painterResource(id = res),
-                contentDescription = result.toString()
+                contentDescription = "dice result"
             )
         }
     }
@@ -58,6 +60,7 @@ fun Dice() {
             },
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.Black.copy(alpha = 0.6F)),
+            modifier = Modifier.semantics { contentDescription = "dice start" }
         ) {
             Text(
                 text = "Dice",

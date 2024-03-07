@@ -1,4 +1,4 @@
-package jp.kuskyst.mtg_life_counter_android
+package jp.kuskyst.mtg_life_counter_android.ui
 
 import androidx.compose.ui.graphics.Color
 

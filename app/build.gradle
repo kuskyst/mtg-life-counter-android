@@ -14,7 +14,7 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "jp.kuskyst.mtg_life_counter_android.HiltTestRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
         }
@@ -67,8 +67,8 @@ dependencies {
     testImplementation "org.robolectric:robolectric:4.11.1"
     testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
 
-    androidTestImplementation "org.robolectric:robolectric:3.6.1"
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation "androidx.test:runner:1.5.2"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
