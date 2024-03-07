@@ -8,7 +8,7 @@ Magic:TheGathering用のライフ計算機
 | DI | Hilt |
 | UI | Jetpack Compose |
 | LocalDB | Room |
-| Test | Android JUnit 4 |
+| Test | Android JUnit 4, Robolectric |
 
 # Demo
 ![device-2024-03-07-000405](https://github.com/kuskyst/mtg-life-counter-android/assets/126965999/e5800f89-0587-4bd0-b47c-ae65e8c7c41a)
