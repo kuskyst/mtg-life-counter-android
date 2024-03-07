@@ -52,10 +52,15 @@ class LifeCounterViewTest {
 
     @Test
     fun dice_start() {
+        this.composeTestRule.onNode(!hasContentDescription("dice result"))
         this.composeTestRule
             .onNodeWithContentDescription("dice start")
             .performClick()
         this.composeTestRule.onNodeWithContentDescription("dice result").assertIsDisplayed()
+        this.composeTestRule
+            .onNodeWithContentDescription("dice start")
+            .performClick()
+        this.composeTestRule.onNode(!hasContentDescription("dice result"))
     }
 
 }
