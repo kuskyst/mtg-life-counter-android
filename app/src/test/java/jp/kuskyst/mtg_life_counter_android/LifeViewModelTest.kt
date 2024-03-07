@@ -24,10 +24,10 @@ class LifeViewModelTest {
 
     @Before
     fun setUp() {
-        this.target = LifeViewModel(LifeRepository(
-            Room.databaseBuilder(RuntimeEnvironment.getApplication().applicationContext, LifeDatabase::class.java, "life")
-                .build().lifeDao()
-        ))
+        this.target = LifeViewModel(LifeRepository(Room
+                .databaseBuilder(RuntimeEnvironment.getApplication().applicationContext,
+                    LifeDatabase::class.java, "life")
+                .build().lifeDao()))
     }
 
     @Test
